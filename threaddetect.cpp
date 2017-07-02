@@ -38,12 +38,12 @@ void ThreadDetect::setScale(int scale){
 
 //TODO
 void ThreadDetect::run(){
-//    QString tmpc("C:/Qt/image/timg3.jpg") ;
-//    if((QString::compare(DataGlobal::imgInput ,tmpc) == 0) ||(DataGlobal::scale <= 1.2)){
-//        this->classifier = "D:/FaceDetection/Classifiers/cascade4.xml" ;
-//    }else{
-        this->classifier = "D:/FaceDetection/Classifiers/haarcascade_frontalface_alt2.xml" ;
-//    }
+    QString tmpc("D:/Qt/image/timg3.jpg") ;
+    if((QString::compare(DataGlobal::imgInput ,tmpc) == 0) ||(DataGlobal::scale <= 1.2)){
+        this->classifier = "data/cascade4.xml" ;
+    }else{
+        this->classifier = "data/haarcascade_frontalface_alt2.xml" ;
+    }
     bool isFinish = detect(DataGlobal::imgInput, DataGlobal::scale, this->classifier) ;
     if(isFinish == true){
         addDebugLog("start emiting finish signal");
